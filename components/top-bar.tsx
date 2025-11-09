@@ -11,12 +11,12 @@ export function TopBar() {
             Join the Paradise Park FD portal to access member resources.
           </p>
           <div className="flex items-center gap-2">
-            <SignInButton signInUrl="/sign-in">
+            <SignInButton>
               <button className="rounded-full border border-white/60 px-3 py-1 text-xs font-semibold uppercase tracking-wide transition hover:bg-white/10">
                 Sign in
               </button>
             </SignInButton>
-            <SignUpButton signUpUrl="/sign-up">
+            <SignUpButton>
               <button className="rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wide text-rose-600 transition hover:bg-white/90">
                 Sign up
               </button>
