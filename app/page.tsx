@@ -26,24 +26,35 @@ export default async function Home() {
         <HeroCarousel />
       </div>
       <section className="grid gap-8 rounded-3xl border border-zinc-200 bg-white px-6 py-10 shadow-sm md:grid-cols-2">
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="relative aspect-[3/4] overflow-hidden rounded-3xl">
-            <Image
-              src="/hero/staff.svg"
-              alt="Crew briefing"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 80vw, 320px"
-              priority
-            />
+        <div className="space-y-4">
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="relative aspect-[3/4] overflow-hidden rounded-3xl">
+              <Image
+                src="/firetrucks.jpeg"
+                alt="Crew briefing"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 80vw, 320px"
+                priority
+              />
+            </div>
+            <div className="relative aspect-[3/4] overflow-hidden rounded-3xl sm:mt-8">
+              <Image
+                src="/firetrucks.jpeg"
+                alt="Community outreach"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 80vw, 320px"
+              />
+            </div>
           </div>
-          <div className="relative aspect-[3/4] overflow-hidden rounded-3xl sm:mt-8">
-            <Image
-              src="/hero/events.svg"
-              alt="Community outreach"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 80vw, 320px"
+          <div className="overflow-hidden rounded-2xl border border-zinc-100">
+            <iframe
+              title="Paradise Park RV Park Map"
+              src="https://www.google.com/maps?q=Paradise+Park+Punta+Gorda&output=embed"
+              className="h-[220px] w-full"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
         </div>
@@ -105,9 +116,9 @@ export default async function Home() {
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {[
-            { title: "Ladder drill", image: "/hero/training.svg" },
-            { title: "Town parade", image: "/hero/events.svg" },
-            { title: "Night operations", image: "/hero/staff.svg" },
+            { title: "Ladder drill", image: "/firetrucks.jpeg" },
+            { title: "Town parade", image: "/firetrucks.jpeg" },
+            { title: "Night operations", image: "/firetrucks.jpeg" },
           ].map((card) => (
             <div key={card.title} className="group relative aspect-[4/5] overflow-hidden rounded-3xl">
               <Image
