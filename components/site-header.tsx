@@ -48,7 +48,7 @@ export function SiteHeader() {
           </button>
           <Link
             href="/"
-            className="text-lg font-semibold tracking-tight text-zinc-900"
+            className="text-base font-semibold tracking-tight text-zinc-900 sm:text-lg"
           >
             Paradise Park FD
           </Link>

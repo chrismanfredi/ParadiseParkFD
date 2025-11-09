@@ -131,9 +131,6 @@ export default async function Home() {
         <div className="flex flex-col gap-3 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.4em] text-rose-500">Community events</p>
           <h2 className="text-3xl font-semibold text-zinc-900">Upcoming neighborhood touchpoints</h2>
-          <p className="text-sm text-zinc-600">
-            Engage with residents through preparedness classes, open houses, and seasonal celebrations.
-          </p>
         </div>
           <CommunityCalendar />
       </section>

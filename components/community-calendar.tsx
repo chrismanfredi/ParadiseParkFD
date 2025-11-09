@@ -26,6 +26,7 @@ const scheduledEvents: EventDay[] = [
   { date: "2025-05-24", label: "Open House" },
   { date: "2025-06-01", label: "River Safety" },
   { date: "2025-06-12", label: "Community Parade" },
+  { date: "2025-06-20", label: "Wildfire Drill" },
 ];
 
 function getDaysInMonth(year: number, month: number) {
@@ -86,8 +87,8 @@ export function CommunityCalendar() {
   };
 
   return (
-    <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm">
-      <div className="flex items-center justify-between">
+    <div className="rounded-3xl border border-zinc-200 bg-white p-4 shadow-sm sm:p-6">
+      <div className="flex items-center justify-between gap-4">
         <button
           type="button"
           className="rounded-full border border-zinc-200 px-3 py-1 text-sm font-semibold text-zinc-700 hover:bg-zinc-50"
@@ -109,12 +110,12 @@ export function CommunityCalendar() {
           →
         </button>
       </div>
-      <div className="mt-6 grid grid-cols-7 text-center text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500">
+      <div className="mt-4 grid grid-cols-7 text-center text-[10px] font-semibold uppercase tracking-[0.3em] text-zinc-500 sm:text-xs">
         {["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].map((dayName) => (
           <div key={dayName}>{dayName}</div>
         ))}
       </div>
-      <div className="mt-2 grid grid-cols-7 gap-2 text-sm">
+      <div className="mt-2 grid grid-cols-7 gap-1 text-[11px] sm:gap-2 sm:text-sm">
         {weeks.map((week, weekIndex) =>
           week.map((value, dayIndex) => {
             if (value === null) {

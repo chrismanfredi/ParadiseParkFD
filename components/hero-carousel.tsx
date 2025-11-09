@@ -67,16 +67,7 @@ export function HeroCarousel() {
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-black/45" />
-        <div className="relative z-10 flex h-full flex-col justify-center gap-5 px-8 py-10 sm:px-16">
-          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-rose-300">
-            Paradise Park FD
-          </p>
-          <h2 className="text-4xl font-semibold leading-tight text-white sm:text-5xl">
-            {activeSlide.title}
-          </h2>
-          <p className="max-w-2xl text-lg text-zinc-100">{activeSlide.description}</p>
-        </div>
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
       <button

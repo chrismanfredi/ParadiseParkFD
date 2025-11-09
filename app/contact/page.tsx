@@ -15,7 +15,7 @@ export default function ContactPage() {
           <p className="mt-2 text-sm text-zinc-600">555-0199 (duty officer line)</p>
 
           <h2 className="mt-6 text-base font-semibold text-zinc-900">Email</h2>
-          <p className="mt-2 text-sm text-zinc-600">command@paradiseparkfd.gov</p>
+          <p className="mt-2 text-sm text-zinc-600">command@paradiseparkfd.com</p>
         </div>
         <form className="rounded-2xl border border-zinc-100 bg-zinc-50 px-6 py-6 space-y-4">
           <label className="flex flex-col text-sm font-medium text-zinc-700">
