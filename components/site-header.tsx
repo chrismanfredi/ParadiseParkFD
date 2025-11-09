@@ -95,7 +95,7 @@ export function SiteHeader() {
                   Sign in
                 </button>
               </SignInButton>
-              <SignUpButton signUpUrl="/sign-up">
+              <SignUpButton>
                 <button className="rounded-full bg-zinc-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-zinc-800">
                   Create account
                 </button>
@@ -150,7 +150,7 @@ export function SiteHeader() {
                     Sign in
                   </button>
                 </SignInButton>
-                <SignUpButton signUpUrl="/sign-up">
+                <SignUpButton>
                   <button className="w-full rounded-full bg-zinc-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-zinc-800">
                     Create account
                   </button>
