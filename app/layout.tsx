@@ -22,7 +22,7 @@ export default async function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className="flex min-h-screen flex-col bg-zinc-50 font-sans antialiased">
+        <body className="flex min-h-screen flex-col bg-zinc-100 font-sans antialiased">
           <SiteHeader />
           <main className="mx-auto flex w-full max-w-6xl flex-1 px-6 pb-10 pt-0">
             {children}

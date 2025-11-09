@@ -41,7 +41,7 @@ export default async function Home() {
             </div>
             <div className="relative aspect-[3/4] overflow-hidden rounded-3xl sm:mt-8">
               <Image
-                src="/paradisepark.jpeg"
+                src="/paradiseparksign.jpeg"
                 alt="Community outreach"
                 fill
                 className="object-cover"
@@ -49,7 +49,7 @@ export default async function Home() {
               />
             </div>
           </div>
-          <div className="overflow-hidden rounded-2xl border border-zinc-100">
+          <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-100">
             <iframe
               title="Paradise Park RV Park Map"
               src="https://www.google.com/maps?q=Paradise+Park+Punta+Gorda&output=embed"
@@ -60,27 +60,18 @@ export default async function Home() {
           </div>
         </div>
         <div className="space-y-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-rose-500">About Paradise Park FD</p>
-          <h2 className="text-3xl font-semibold text-zinc-900">We are always ready to help</h2>
+          <h2 className="text-3xl font-semibold text-zinc-900">About Paradise Park FD</h2>
           <p className="text-base text-zinc-600">
-            {user
-              ? `Welcome back, ${user.firstName ?? user.username ?? "operator"}.`
-              : "The Paradise Park portal"}{" "}
-            keeps trainings, operations, and outreach aligned for {staffCount} active personnel. Crews can review
-            drills, coordinate town events, and share critical updates from one secure workspace.
+            Located in the heart of Paradise Park, the Paradise Park Fire Department is more than just a team of first responders — we’re neighbors helping neighbors. Our department is dedicated to keeping residents and visitors safe through fire protection, emergency response, and community education.
           </p>
           <ul className="space-y-3 text-sm text-zinc-600">
             <li className="rounded-2xl border border-zinc-100 px-4 py-3">
-              <p className="text-base font-semibold text-zinc-900">Firefighter equipment</p>
-              <p>Monitor apparatus readiness and PPE lifecycle without spreadsheets.</p>
+              <p className="text-base font-semibold text-zinc-900">Meet Our Team</p>
+              <p>Our firefighters and volunteers come from all walks of life, united by a shared dedication to serving others. Get to know the brave men and women who keep Paradise Park safe day and night.</p>
             </li>
             <li className="rounded-2xl border border-zinc-100 px-4 py-3">
-              <p className="text-base font-semibold text-zinc-900">Technical rescue</p>
-              <p>Log high-angle, confined-space, and water rescue trainings with attendance.</p>
-            </li>
-            <li className="rounded-2xl border border-zinc-100 px-4 py-3">
-              <p className="text-base font-semibold text-zinc-900">Operations force</p>
-              <p>Coordinate crews across stations using real-time roster data from Supabase.</p>
+              <p className="text-base font-semibold text-zinc-900">Community Events</p>
+              <p> From our annual Pancake Breakfast to Family Safety Day, the Paradise Park Fire Department loves bringing the community together. Join us for fun, food, and friendship — all while learning about fire safety and preparedness. </p>
             </li>
           </ul>
         </div>
@@ -140,12 +131,16 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-zinc-200 bg-white px-6 py-10 shadow-sm">
-        <div className="flex flex-col gap-3 text-center">
-          <h2 className="text-3xl font-semibold text-zinc-900 mb-10">Upcoming neighborhood Events</h2>
+      <div className={`${fullBleedClass} bg-zinc-100`}>
+        <div className="mx-auto flex w-full max-w-6xl flex-col px-6 py-10">
+          <section className="rounded-3xl border border-zinc-200 bg-white px-6 py-10 shadow-sm">
+            <div className="flex flex-col gap-3 text-center">
+              <h2 className="text-3xl font-semibold text-zinc-900 mb-10">Upcoming neighborhood Events</h2>
+            </div>
+            <CommunityCalendar />
+          </section>
         </div>
-          <CommunityCalendar />
-      </section>
+      </div>
 
       <section className="grid gap-6 rounded-3xl border border-zinc-200 bg-white px-6 py-10 shadow-sm md:grid-cols-2">
         <form className="space-y-4">
