@@ -76,26 +76,46 @@ export default async function Home() {
           </ul>
         </div>
       </section>
+      <section className="rounded-3xl border border-zinc-200 bg-white px-6 py-10 shadow-sm">
+        <div className="text-center">
+          <h2 className="mt-3 text-3xl font-semibold text-zinc-900">Meet the Paradise Park crew</h2>
+          <p className="mt-2 text-sm text-zinc-600">
+            Neighbors helping neighbors—professionals and volunteers who make the department run.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {[
+            { name: "Jason Smith", title: "Chief", image: "/member.png" },
+            { name: "Jason Smith", title: "Member", image: "/member.png" },
+            { name: "Jason Smith", title: "Member", image: "/member.png" },
+          ].map((member) => (
+            <div key={member.name} className="rounded-2xl border border-zinc-100 bg-zinc-50 p-4 text-center">
+              <div className="mx-auto h-32 w-32 overflow-hidden rounded-full border border-zinc-200">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  width={128}
+                  height={128}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <p className="mt-4 text-lg font-semibold text-zinc-900">{member.name}</p>
+              <p className="text-sm text-zinc-600">{member.title}</p>
+            </div>
+          ))}
+        </div>
+      </section>
 
       <div className={fullBleedStatic} style={{ marginLeft: "calc(50% - 50vw)" }}>
         <section className="relative h-[360px] w-full overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: "url(/firetrucks.jpeg)",
+              backgroundImage: "url(/paradiseparksign.jpeg)",
               backgroundAttachment: "fixed",
             }}
           />
-          <div className="absolute inset-0 bg-black/50" />
-          <div className="relative z-10 flex h-full flex-col items-center justify-center gap-3 text-center text-white">
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-rose-300">
-              Field Ready
-            </p>
-            <h3 className="text-3xl font-semibold">Prepared for every call</h3>
-            <p className="max-w-2xl text-sm text-zinc-200">
-              High-fidelity training imagery keeps teams focused on the mission ahead.
-            </p>
-          </div>
+          <div className="absolute inset-0 bg-black/35" />
         </section>
       </div>
 
@@ -110,8 +130,8 @@ export default async function Home() {
         <div className="grid gap-4 md:grid-cols-3">
           {[
             { title: "Ladder drill", image: "/firetrucks.jpeg" },
-            { title: "Town parade", image: "/firetrucks.jpeg" },
-            { title: "Night operations", image: "/firetrucks.jpeg" },
+            { title: "Town parade", image: "/paradisepark.jpeg" },
+            { title: "Night operations", image: "/paradiseparksign.jpeg" },
           ].map((card) => (
             <div key={card.title} className="group relative aspect-[4/5] overflow-hidden rounded-3xl">
               <Image
