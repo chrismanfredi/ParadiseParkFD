@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { syncMemberFromClerk } from "@/lib/sync-clerk-user";
 import "./globals.css";
@@ -26,6 +27,7 @@ export default async function RootLayout({
           <main className="mx-auto flex w-full max-w-6xl flex-1 px-6 pb-10 pt-0">
             {children}
           </main>
+          <SiteFooter />
         </body>
       </html>
     </ClerkProvider>

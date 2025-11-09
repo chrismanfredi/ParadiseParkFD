@@ -1,17 +1,14 @@
 import { SignedIn } from "@clerk/nextjs";
 import { currentUser } from "@clerk/nextjs/server";
-import type { CSSProperties } from "react";
 import Image from "next/image";
 import { sql } from "drizzle-orm";
 import Link from "next/link";
 import { HeroCarousel } from "@/components/hero-carousel";
+import { CommunityCalendar } from "@/components/community-calendar";
 import { db } from "@/db";
 import { staff } from "@/db/schema";
 
-const fullBleedStyle: CSSProperties = {
-  width: "100vw",
-  marginLeft: "calc(50% - 50vw)",
-};
+const fullBleedClass = "relative left-1/2 right-1/2 w-screen -translate-x-1/2";
 
 export default async function Home() {
   const user = await currentUser();
@@ -25,7 +22,7 @@ export default async function Home() {
 
   return (
     <div className="flex w-full flex-col gap-10">
-      <div style={fullBleedStyle}>
+      <div className={fullBleedClass}>
         <HeroCarousel />
       </div>
       <section className="grid gap-8 rounded-3xl border border-zinc-200 bg-white px-6 py-10 shadow-sm md:grid-cols-2">
@@ -77,15 +74,12 @@ export default async function Home() {
         </div>
       </section>
 
-      <div style={fullBleedStyle}>
+      <div className={fullBleedClass}>
         <section className="relative h-[360px] w-full overflow-hidden">
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 bg-cover bg-center md:bg-fixed"
             style={{
               backgroundImage: "url(/firetrucks.jpeg)",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundAttachment: "fixed",
             }}
           />
           <div className="absolute inset-0 bg-black/50" />
@@ -130,6 +124,77 @@ export default async function Home() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="rounded-3xl border border-zinc-200 bg-white px-6 py-10 shadow-sm">
+        <div className="flex flex-col gap-3 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-rose-500">Community events</p>
+          <h2 className="text-3xl font-semibold text-zinc-900">Upcoming neighborhood touchpoints</h2>
+          <p className="text-sm text-zinc-600">
+            Engage with residents through preparedness classes, open houses, and seasonal celebrations.
+          </p>
+        </div>
+          <CommunityCalendar />
+      </section>
+
+      <section className="grid gap-6 rounded-3xl border border-zinc-200 bg-white px-6 py-10 shadow-sm md:grid-cols-2">
+        <form className="space-y-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-rose-500">Contact us</p>
+          <h2 className="text-3xl font-semibold text-zinc-900">Share what you need</h2>
+          <p className="text-sm text-zinc-600">
+            Reach out for training requests, community partnerships, or station information.
+          </p>
+          <label className="flex flex-col text-sm font-medium text-zinc-700">
+            Name
+            <input
+              type="text"
+              placeholder="Your full name"
+              className="mt-1 rounded-xl border border-zinc-200 px-3 py-2 text-sm text-zinc-900 focus:border-rose-400 focus:outline-none"
+            />
+          </label>
+          <label className="flex flex-col text-sm font-medium text-zinc-700">
+            Email
+            <input
+              type="email"
+              placeholder="you@paradiseparkfd.gov"
+              className="mt-1 rounded-xl border border-zinc-200 px-3 py-2 text-sm text-zinc-900 focus:border-rose-400 focus:outline-none"
+            />
+          </label>
+          <label className="flex flex-col text-sm font-medium text-zinc-700">
+            Message
+            <textarea
+              rows={4}
+              placeholder="Describe how we can help..."
+              className="mt-1 rounded-xl border border-zinc-200 px-3 py-2 text-sm text-zinc-900 focus:border-rose-400 focus:outline-none"
+            />
+          </label>
+          <button className="w-full rounded-full bg-zinc-900 px-6 py-3 text-sm font-semibold text-white transition hover:bg-zinc-800">
+            Send message
+          </button>
+        </form>
+
+        <div className="rounded-2xl border border-zinc-100 bg-zinc-50 px-6 py-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-rose-500">Always ready to help</p>
+          <h3 className="mt-3 text-2xl font-semibold text-zinc-900">Paradise Park Fire Department</h3>
+          <ul className="mt-6 space-y-4 text-sm text-zinc-700">
+            <li>
+              <p className="text-xs uppercase tracking-[0.3em] text-zinc-500">Phone</p>
+              <p className="text-lg font-semibold text-zinc-900">555-0199 (duty officer)</p>
+            </li>
+            <li>
+              <p className="text-xs uppercase tracking-[0.3em] text-zinc-500">Email</p>
+              <p className="text-lg font-semibold text-zinc-900">command@paradiseparkfd.gov</p>
+            </li>
+            <li>
+              <p className="text-xs uppercase tracking-[0.3em] text-zinc-500">Address</p>
+              <p className="text-lg font-semibold text-zinc-900">101 Station Way, Paradise Park</p>
+            </li>
+          </ul>
+          <div className="mt-8 space-y-2 text-sm text-zinc-600">
+            <p>Open 24/7 for emergencies.</p>
+            <p>Administrative hours: Mon–Fri, 8am–5pm.</p>
+          </div>
         </div>
       </section>
       <section className="grid gap-6 md:grid-cols-2">

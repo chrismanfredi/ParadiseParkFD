@@ -58,7 +58,7 @@ export function HeroCarousel() {
 
   return (
     <section className="relative w-full overflow-hidden border border-zinc-200 text-white shadow-lg">
-      <div className="relative min-h-[640px]">
+      <div className="relative h-[640px] sm:h-[700px]">
         <Image
           src={activeSlide.image}
           alt={activeSlide.title}
