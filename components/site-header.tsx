@@ -5,7 +5,6 @@ import {
   SignedIn,
   SignedOut,
   SignInButton,
-  SignUpButton,
   UserButton,
 } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
@@ -89,21 +88,14 @@ export function SiteHeader() {
             />
           </SignedIn>
           <SignedOut>
-            <>
-              <SignInButton>
-                <button className="rounded-full border border-zinc-200 px-4 py-2 text-sm font-medium text-zinc-800 transition hover:bg-zinc-50">
-                  Sign in
-                </button>
-              </SignInButton>
-              <SignUpButton>
-                <button className="rounded-full bg-zinc-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-zinc-800">
-                  Create account
-                </button>
-              </SignUpButton>
-            </>
+            <SignInButton mode="modal">
+              <button className="rounded-full border border-zinc-200 px-4 py-2 text-sm font-medium text-zinc-800 transition hover:bg-zinc-50">
+                Sign in / Create account
+              </button>
+            </SignInButton>
           </SignedOut>
         </div>
-        <div className="flex flex-1 items-center justify-end md:hidden">
+        <div className="flex flex-1 items-center justify-end gap-2 md:hidden">
           <SignedIn>
             <UserButton
               afterSignOutUrl="/"
@@ -117,6 +109,13 @@ export function SiteHeader() {
               }}
             />
           </SignedIn>
+          <SignedOut>
+            <SignInButton mode="modal">
+              <button className="rounded-full border border-zinc-200 px-3 py-1.5 text-xs font-semibold text-zinc-800 transition hover:bg-zinc-50">
+                Sign in / Join
+              </button>
+            </SignInButton>
+          </SignedOut>
         </div>
       </div>
       {isMenuOpen && (
@@ -142,22 +141,6 @@ export function SiteHeader() {
               })}
             </ul>
           </nav>
-          <div className="mt-6 flex flex-col gap-3">
-            <SignedOut>
-              <>
-                <SignInButton>
-                  <button className="w-full rounded-full border border-zinc-200 px-4 py-2 text-sm font-medium text-zinc-800 transition hover:bg-zinc-50">
-                    Sign in
-                  </button>
-                </SignInButton>
-                <SignUpButton>
-                  <button className="w-full rounded-full bg-zinc-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-zinc-800">
-                    Create account
-                  </button>
-                </SignUpButton>
-              </>
-            </SignedOut>
-          </div>
         </div>
       )}
     </header>

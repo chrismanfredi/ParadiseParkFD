@@ -9,6 +9,7 @@ import { db } from "@/db";
 import { staff } from "@/db/schema";
 
 const fullBleedClass = "relative left-1/2 right-1/2 w-screen -translate-x-1/2";
+const fullBleedStatic = "w-screen" as const;
 
 export default async function Home() {
   const user = await currentUser();
@@ -40,7 +41,7 @@ export default async function Home() {
             </div>
             <div className="relative aspect-[3/4] overflow-hidden rounded-3xl sm:mt-8">
               <Image
-                src="/firetrucks.jpeg"
+                src="/paradisepark.jpeg"
                 alt="Community outreach"
                 fill
                 className="object-cover"
@@ -85,12 +86,13 @@ export default async function Home() {
         </div>
       </section>
 
-      <div className={fullBleedClass}>
+      <div className={fullBleedStatic} style={{ marginLeft: "calc(50% - 50vw)" }}>
         <section className="relative h-[360px] w-full overflow-hidden">
           <div
-            className="absolute inset-0 bg-cover bg-center md:bg-fixed"
+            className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage: "url(/firetrucks.jpeg)",
+              backgroundAttachment: "fixed",
             }}
           />
           <div className="absolute inset-0 bg-black/50" />
@@ -140,8 +142,7 @@ export default async function Home() {
 
       <section className="rounded-3xl border border-zinc-200 bg-white px-6 py-10 shadow-sm">
         <div className="flex flex-col gap-3 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-rose-500">Community events</p>
-          <h2 className="text-3xl font-semibold text-zinc-900">Upcoming neighborhood touchpoints</h2>
+          <h2 className="text-3xl font-semibold text-zinc-900 mb-10">Upcoming neighborhood Events</h2>
         </div>
           <CommunityCalendar />
       </section>

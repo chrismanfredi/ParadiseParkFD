@@ -22,12 +22,8 @@ type EventDay = {
   label: string;
 };
 
-const scheduledEvents: EventDay[] = [
-  { date: "2025-05-24", label: "Open House" },
-  { date: "2025-06-01", label: "River Safety" },
-  { date: "2025-06-12", label: "Community Parade" },
-  { date: "2025-06-20", label: "Wildfire Drill" },
-];
+const staticEvents: EventDay[] = [];
+const ICE_CREAM_LABEL = "Thursday Ice Cream Social";
 
 function getDaysInMonth(year: number, month: number) {
   return new Date(year, month + 1, 0).getDate();
@@ -40,11 +36,20 @@ export function CommunityCalendar() {
 
   const eventsByDay = useMemo(() => {
     const map = new Map<string, EventDay>();
-    for (const event of scheduledEvents) {
+    for (const event of staticEvents) {
       map.set(event.date, event);
     }
+    // Add weekly ice cream socials on Thursdays.
+    const daysInMonth = getDaysInMonth(currentYear, currentMonth);
+    for (let day = 1; day <= daysInMonth; day++) {
+      const date = new Date(currentYear, currentMonth, day);
+      if (date.getDay() === 4) {
+        const key = `${currentYear}-${String(currentMonth + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+        map.set(key, { date: key, label: ICE_CREAM_LABEL });
+      }
+    }
     return map;
-  }, []);
+  }, [currentMonth, currentYear]);
 
   const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
   const daysInMonth = getDaysInMonth(currentYear, currentMonth);
@@ -87,7 +92,7 @@ export function CommunityCalendar() {
   };
 
   return (
-    <div className="rounded-3xl border border-zinc-200 bg-white p-4 shadow-sm sm:p-6">
+    <div className="overflow-hidden rounded-3xl border border-zinc-200 bg-white p-4 shadow-sm sm:p-6">
       <div className="flex items-center justify-between gap-4">
         <button
           type="button"
@@ -115,7 +120,7 @@ export function CommunityCalendar() {
           <div key={dayName}>{dayName}</div>
         ))}
       </div>
-      <div className="mt-2 grid grid-cols-7 gap-1 text-[11px] sm:gap-2 sm:text-sm">
+      <div className="mt-2 hidden grid-cols-7 gap-[2px] text-[10px] lg:grid sm:gap-2 sm:text-sm">
         {weeks.map((week, weekIndex) =>
           week.map((value, dayIndex) => {
             if (value === null) {
@@ -129,16 +134,37 @@ export function CommunityCalendar() {
             return (
               <div
                 key={`${weekIndex}-${dayIndex}`}
-                className={`flex h-16 flex-col justify-between rounded-2xl border px-2 py-1 ${
-                  event ? "border-rose-200 bg-rose-50" : "border-zinc-100 bg-zinc-50"
+                className={`flex h-16 flex-col justify-between rounded-xl border px-1 py-1 sm:rounded-2xl sm:px-2 ${
+                  event ? "border-emerald-200 bg-emerald-50" : "border-zinc-100 bg-zinc-50"
                 }`}
               >
-                <span className="text-xs font-semibold text-zinc-500">{value}</span>
-                {event && <span className="text-[11px] font-semibold text-rose-600">{event.label}</span>}
+                <span className="text-[10px] font-semibold text-zinc-500 sm:text-xs">{value}</span>
+                {event && (
+                  <div className="flex flex-col text-[11px] font-semibold text-emerald-700">
+                    <span>{event.label}</span>
+                    <span className="text-[10px] font-medium text-emerald-600 sm:text-xs md:text-sm">4:00 PM</span>
+                    <span className="text-[10px] font-medium text-emerald-500 sm:text-xs md:text-sm">Bingo Hall</span>
+                  </div>
+                )}
               </div>
             );
           }),
         )}
+      </div>
+      <div className="mt-4 flex flex-col gap-3 text-sm lg:hidden">
+        {Array.from(eventsByDay.values()).map((event) => {
+          const displayDate = new Date(`${event.date}T12:00:00`);
+          const dayStamp = displayDate.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+          return (
+            <div key={event.date} className="rounded-2xl border border-emerald-200 bg-emerald-50 px-4 py-3">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-600">
+                Thursday · {dayStamp}
+              </p>
+              <p className="text-base font-semibold text-emerald-900">{ICE_CREAM_LABEL}</p>
+              <p className="text-xs font-medium text-emerald-800 sm:text-sm">4:00 PM · Bingo Hall</p>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
