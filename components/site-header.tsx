@@ -30,8 +30,8 @@ export function SiteHeader() {
 
   return (
     <header className="border-b border-zinc-200 bg-white">
-      <div className="mx-auto flex w-full max-w-6xl items-center gap-6 px-6 py-4">
-        <div className="flex flex-1 items-center gap-3">
+      <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center gap-4 px-4 py-4 sm:gap-6 sm:px-6">
+        <div className="flex flex-1 items-center gap-2 min-w-0">
           <button
             type="button"
             className="flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 text-zinc-700 hover:bg-zinc-50 md:hidden"
@@ -47,7 +47,7 @@ export function SiteHeader() {
           </button>
           <Link
             href="/"
-            className="text-base font-semibold tracking-tight text-zinc-900 sm:text-lg"
+            className="truncate text-xs font-semibold tracking-tight text-zinc-900 sm:text-sm md:text-base"
           >
             Paradise Park FD
           </Link>

@@ -1,26 +1,14 @@
 import { SignedIn } from "@clerk/nextjs";
-import { currentUser } from "@clerk/nextjs/server";
 import Image from "next/image";
-import { sql } from "drizzle-orm";
 import Link from "next/link";
 import { HeroCarousel } from "@/components/hero-carousel";
+import { ParallaxBanner } from "@/components/parallax-banner";
 import { CommunityCalendar } from "@/components/community-calendar";
-import { db } from "@/db";
-import { staff } from "@/db/schema";
 
 const fullBleedClass = "relative left-1/2 right-1/2 w-screen -translate-x-1/2";
 const fullBleedStatic = "w-screen" as const;
 
-export default async function Home() {
-  const user = await currentUser();
-  let staffCount = 0;
-  try {
-    const result = await db.select({ total: sql<number>`count(*)::int` }).from(staff);
-    staffCount = result[0]?.total ?? 0;
-  } catch (error) {
-    console.error("Unable to load staff count:", error);
-  }
-
+export default function Home() {
   return (
     <div className="flex w-full flex-col gap-10">
       <div className={fullBleedClass}>
@@ -107,21 +95,11 @@ export default async function Home() {
       </section>
 
       <div className={fullBleedStatic} style={{ marginLeft: "calc(50% - 50vw)" }}>
-        <section className="relative h-[360px] w-full overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: "url(/paradiseparksign.jpeg)",
-              backgroundAttachment: "fixed",
-            }}
-          />
-          <div className="absolute inset-0 bg-black/35" />
-        </section>
+        <ParallaxBanner image="/1.jpeg" height={360} />
       </div>
 
       <section className="space-y-6 rounded-3xl border border-zinc-200 bg-white px-6 py-10 shadow-sm">
         <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.4em] text-rose-500">Community impact</p>
           <h2 className="mt-3 text-3xl font-semibold text-zinc-900">Moments from Paradise Park</h2>
           <p className="mt-2 text-sm text-zinc-600">
             Training, outreach, and rapid response in action across the neighborhood.
@@ -130,22 +108,20 @@ export default async function Home() {
         <div className="grid gap-4 md:grid-cols-3">
           {[
             { title: "Ladder drill", image: "/firetrucks.jpeg" },
-            { title: "Town parade", image: "/paradisepark.jpeg" },
-            { title: "Night operations", image: "/paradiseparksign.jpeg" },
+            { title: "Town parade", image: "/3.jpeg" },
+            { title: "Kids Day", image: "/2.jpeg" },
           ].map((card) => (
-            <div key={card.title} className="group relative aspect-[4/5] overflow-hidden rounded-3xl">
-              <Image
-                src={card.image}
-                alt={card.title}
-                fill
-                className="object-cover transition duration-500 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 320px"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 text-center transition duration-300 group-hover:bg-black/50">
-                <p className="text-lg font-semibold text-white opacity-0 transition duration-300 group-hover:opacity-100">
-                  {card.title}
-                </p>
+            <div key={card.title} className="group rounded-3xl border border-zinc-100 bg-zinc-50 p-4">
+              <div className="relative mx-auto h-48 w-full max-w-[240px] overflow-hidden rounded-2xl">
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 70vw, 240px"
+                />
               </div>
+              <p className="mt-4 text-center text-lg font-semibold text-zinc-900">{card.title}</p>
             </div>
           ))}
         </div>

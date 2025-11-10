@@ -20,21 +20,21 @@ export function HeroCarousel() {
         title: "Training readiness, simplified",
         description:
           "Review upcoming drills, hazard refreshers, and post-incident lessons in one unified view.",
-        image: "/firetrucks.jpeg",
+        image: "/tempfiretruck.jpeg",
       },
       {
         id: 2,
         title: "Town outreach calendar",
         description:
           "Stay ahead of community events, school visits, and safety demonstrations happening around Paradise Park.",
-        image: "/paradiseparksign.jpeg",
+        image: "/1.jpeg",
       },
       {
         id: 3,
         title: "Unified staff directory",
         description:
           "See who is on shift, reach captains quickly, and keep personal details current without spreadsheets.",
-        image: "/paradiseparksign.jpeg",
+        image: "/2.jpeg",
       },
     ],
     []
