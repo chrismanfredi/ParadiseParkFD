@@ -1,0 +1,236 @@
+20:11:34.131811 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/bin/git
+20:11:34.132418 exec-cmd.c:238          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/bin
+20:11:34.133027 git.c:460               trace: built-in: git push origin main
+20:11:34.133586 run-command.c:654       trace: run_command: GIT_DIR=.git git remote-https origin https://github.com/chrismanfredi/ParadiseParkFD.git
+20:11:34.137146 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/libexec/git-core/git
+20:11:34.137776 exec-cmd.c:238          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/libexec/git-core
+20:11:34.138133 git.c:749               trace: exec: git-remote-https origin https://github.com/chrismanfredi/ParadiseParkFD.git
+20:11:34.138161 run-command.c:654       trace: run_command: git-remote-https origin https://github.com/chrismanfredi/ParadiseParkFD.git
+20:11:34.142079 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/libexec/git-core/git-remote-https
+20:11:34.142598 exec-cmd.c:238          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/libexec/git-core
+20:11:34.150520 http.c:678              == Info: Couldn't find host github.com in the .netrc file; using defaults
+20:11:34.152396 http.c:678              == Info: Host github.com:443 was resolved.
+20:11:34.152433 http.c:678              == Info: IPv6: (none)
+20:11:34.152450 http.c:678              == Info: IPv4: 140.82.114.4
+20:11:34.152501 http.c:678              == Info:   Trying 140.82.114.4:443...
+20:11:34.203332 http.c:678              == Info: Connected to github.com (140.82.114.4) port 443
+20:11:34.203481 http.c:678              == Info: ALPN: curl offers http/1.1
+20:11:34.203825 http.c:678              == Info: (304) (OUT), TLS handshake, Client hello (1):
+20:11:34.214681 http.c:678              == Info:  CAfile: /etc/ssl/cert.pem
+20:11:34.214718 http.c:678              == Info:  CApath: none
+20:11:34.252878 http.c:678              == Info: (304) (IN), TLS handshake, Server hello (2):
+20:11:34.253569 http.c:678              == Info: (304) (IN), TLS handshake, Unknown (8):
+20:11:34.253647 http.c:678              == Info: (304) (IN), TLS handshake, Certificate (11):
+20:11:34.258038 http.c:678              == Info: (304) (IN), TLS handshake, CERT verify (15):
+20:11:34.258548 http.c:678              == Info: (304) (IN), TLS handshake, Finished (20):
+20:11:34.258648 http.c:678              == Info: (304) (OUT), TLS handshake, Finished (20):
+20:11:34.258675 http.c:678              == Info: SSL connection using TLSv1.3 / AEAD-AES128-GCM-SHA256 / [blank] / UNDEF
+20:11:34.258687 http.c:678              == Info: ALPN: server accepted http/1.1
+20:11:34.258699 http.c:678              == Info: Server certificate:
+20:11:34.258715 http.c:678              == Info:  subject: CN=github.com
+20:11:34.258727 http.c:678              == Info:  start date: Feb  5 00:00:00 2025 GMT
+20:11:34.258737 http.c:678              == Info:  expire date: Feb  5 23:59:59 2026 GMT
+20:11:34.258755 http.c:678              == Info:  subjectAltName: host "github.com" matched cert's "github.com"
+20:11:34.258776 http.c:678              == Info:  issuer: C=GB; ST=Greater Manchester; L=Salford; O=Sectigo Limited; CN=Sectigo ECC Domain Validation Secure Server CA
+20:11:34.258787 http.c:678              == Info:  SSL certificate verify ok.
+20:11:34.258798 http.c:678              == Info: using HTTP/1.x
+20:11:34.258854 http.c:625              => Send header, 0000000208 bytes (0x000000d0)
+20:11:34.258871 http.c:637              => Send header: GET /chrismanfredi/ParadiseParkFD.git/info/refs?service=git-receive-pack HTTP/1.1
+20:11:34.258881 http.c:637              => Send header: Host: github.com
+20:11:34.258890 http.c:637              => Send header: User-Agent: git/2.37.1 (Apple Git-137.1)
+20:11:34.258898 http.c:637              => Send header: Accept: */*
+20:11:34.258907 http.c:637              => Send header: Accept-Encoding: deflate, gzip
+20:11:34.258936 http.c:637              => Send header: Pragma: no-cache
+20:11:34.258942 http.c:637              => Send header:
+20:11:34.258957 http.c:678              == Info: Request completely sent off
+20:11:34.315446 http.c:625              <= Recv header, 0000000027 bytes (0x0000001b)
+20:11:34.315493 http.c:637              <= Recv header: HTTP/1.1 401 Unauthorized
+20:11:34.315505 http.c:625              <= Recv header, 0000000026 bytes (0x0000001a)
+20:11:34.315512 http.c:637              <= Recv header: Server: GitHub-Babel/3.0
+20:11:34.315572 http.c:625              <= Recv header, 0000000054 bytes (0x00000036)
+20:11:34.315583 http.c:637              <= Recv header: Content-Security-Policy: default-src 'none'; sandbox
+20:11:34.315592 http.c:625              <= Recv header, 0000000041 bytes (0x00000029)
+20:11:34.315599 http.c:637              <= Recv header: Content-Type: text/plain; charset=UTF-8
+20:11:34.315607 http.c:625              <= Recv header, 0000000040 bytes (0x00000028)
+20:11:34.315613 http.c:637              <= Recv header: www-authenticate: Basic realm="GitHub"
+20:11:34.315620 http.c:625              <= Recv header, 0000000020 bytes (0x00000014)
+20:11:34.315627 http.c:637              <= Recv header: Content-Length: 26
+20:11:34.315633 http.c:625              <= Recv header, 0000000037 bytes (0x00000025)
+20:11:34.315639 http.c:637              <= Recv header: Date: Mon, 10 Nov 2025 01:11:34 GMT
+20:11:34.315646 http.c:625              <= Recv header, 0000000059 bytes (0x0000003b)
+20:11:34.315651 http.c:637              <= Recv header: X-GitHub-Request-Id: C041:FD6CD:FFAF95D:1429B918:69113BC6
+20:11:34.315658 http.c:625              <= Recv header, 0000000023 bytes (0x00000017)
+20:11:34.315664 http.c:637              <= Recv header: X-Frame-Options: DENY
+20:11:34.315671 http.c:625              <= Recv header, 0000000073 bytes (0x00000049)
+20:11:34.315677 http.c:637              <= Recv header: Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+20:11:34.315684 http.c:625              <= Recv header, 0000000002 bytes (0x00000002)
+20:11:34.315690 http.c:637              <= Recv header:
+20:11:34.315708 http.c:678              == Info: Connection #0 to host github.com left intact
+20:11:34.315758 run-command.c:654       trace: run_command: 'git credential-osxkeychain get'
+20:11:34.323166 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/libexec/git-core/git
+20:11:34.323809 exec-cmd.c:238          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/libexec/git-core
+20:11:34.324170 git.c:749               trace: exec: git-credential-osxkeychain get
+20:11:34.324191 run-command.c:654       trace: run_command: git-credential-osxkeychain get
+20:11:34.351727 http.c:678              == Info: Found bundle for host: 0x7f9baea15380 [serially]
+20:11:34.351798 http.c:678              == Info: Re-using existing connection with host github.com
+20:11:34.351841 http.c:678              == Info: Server auth using Basic with user 'chrismanfredi'
+20:11:34.351964 http.c:625              => Send header, 0000000303 bytes (0x0000012f)
+20:11:34.351986 http.c:637              => Send header: GET /chrismanfredi/ParadiseParkFD.git/info/refs?service=git-receive-pack HTTP/1.1
+20:11:34.351997 http.c:637              => Send header: Host: github.com
+20:11:34.352006 http.c:637              => Send header: Authorization: Basic <redacted>
+20:11:34.352015 http.c:637              => Send header: User-Agent: git/2.37.1 (Apple Git-137.1)
+20:11:34.352024 http.c:637              => Send header: Accept: */*
+20:11:34.352033 http.c:637              => Send header: Accept-Encoding: deflate, gzip
+20:11:34.352043 http.c:637              => Send header: Pragma: no-cache
+20:11:34.352051 http.c:637              => Send header:
+20:11:34.352070 http.c:678              == Info: Request completely sent off
+20:11:34.441971 http.c:625              <= Recv header, 0000000017 bytes (0x00000011)
+20:11:34.442061 http.c:637              <= Recv header: HTTP/1.1 200 OK
+20:11:34.442082 http.c:625              <= Recv header, 0000000026 bytes (0x0000001a)
+20:11:34.442093 http.c:637              <= Recv header: Server: GitHub-Babel/3.0
+20:11:34.442108 http.c:625              <= Recv header, 0000000060 bytes (0x0000003c)
+20:11:34.442119 http.c:637              <= Recv header: Content-Type: application/x-git-receive-pack-advertisement
+20:11:34.442131 http.c:625              <= Recv header, 0000000054 bytes (0x00000036)
+20:11:34.442141 http.c:637              <= Recv header: Content-Security-Policy: default-src 'none'; sandbox
+20:11:34.442152 http.c:625              <= Recv header, 0000000040 bytes (0x00000028)
+20:11:34.442162 http.c:637              <= Recv header: expires: Fri, 01 Jan 1980 00:00:00 GMT
+20:11:34.442174 http.c:625              <= Recv header, 0000000018 bytes (0x00000012)
+20:11:34.442184 http.c:637              <= Recv header: pragma: no-cache
+20:11:34.442195 http.c:625              <= Recv header, 0000000053 bytes (0x00000035)
+20:11:34.442205 http.c:637              <= Recv header: Cache-Control: no-cache, max-age=0, must-revalidate
+20:11:34.442217 http.c:625              <= Recv header, 0000000023 bytes (0x00000017)
+20:11:34.442227 http.c:637              <= Recv header: Vary: Accept-Encoding
+20:11:34.442239 http.c:625              <= Recv header, 0000000028 bytes (0x0000001c)
+20:11:34.442249 http.c:637              <= Recv header: Transfer-Encoding: chunked
+20:11:34.442260 http.c:625              <= Recv header, 0000000037 bytes (0x00000025)
+20:11:34.442270 http.c:637              <= Recv header: Date: Mon, 10 Nov 2025 01:11:34 GMT
+20:11:34.442281 http.c:625              <= Recv header, 0000000059 bytes (0x0000003b)
+20:11:34.442290 http.c:637              <= Recv header: X-GitHub-Request-Id: C041:FD6CD:FFAF9BD:1429B985:69113BC6
+20:11:34.442301 http.c:625              <= Recv header, 0000000023 bytes (0x00000017)
+20:11:34.442310 http.c:637              <= Recv header: X-Frame-Options: DENY
+20:11:34.442322 http.c:625              <= Recv header, 0000000073 bytes (0x00000049)
+20:11:34.442332 http.c:637              <= Recv header: Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+20:11:34.442343 http.c:625              <= Recv header, 0000000002 bytes (0x00000002)
+20:11:34.442352 http.c:637              <= Recv header:
+20:11:34.442436 http.c:678              == Info: Connection #0 to host github.com left intact
+20:11:34.442483 run-command.c:654       trace: run_command: 'git credential-osxkeychain store'
+20:11:34.456005 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/libexec/git-core/git
+20:11:34.456819 exec-cmd.c:238          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/libexec/git-core
+20:11:34.457608 git.c:749               trace: exec: git-credential-osxkeychain store
+20:11:34.457648 run-command.c:654       trace: run_command: git-credential-osxkeychain store
+20:11:34.495574 run-command.c:654       trace: run_command: 'git credential-osxkeychain store'
+20:11:34.507266 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/libexec/git-core/git
+20:11:34.507999 exec-cmd.c:238          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/libexec/git-core
+20:11:34.508439 git.c:749               trace: exec: git-credential-osxkeychain store
+20:11:34.508463 run-command.c:654       trace: run_command: git-credential-osxkeychain store
+20:11:34.544172 pkt-line.c:80           packet:          git< # service=git-receive-pack
+20:11:34.544216 pkt-line.c:80           packet:          git< 0000
+20:11:34.544233 pkt-line.c:80           packet:          git< 7efc49d29a97898655ef338e373ac1ad0eda4fa6 refs/heads/main\0report-status report-status-v2 delete-refs side-band-64k ofs-delta atomic object-format=sha1 quiet agent=github/spokes-receive-pack-acac8763c60f636c44baaf5c3887895cf5f55c30 session-id=C041:FD6CD:FFAF9BD:1429B985:69113BC6 push-options
+20:11:34.544290 pkt-line.c:80           packet:          git< 0000
+20:11:34.544840 pkt-line.c:80           packet:          git> refs/heads/main:refs/heads/main
+20:11:34.544856 pkt-line.c:80           packet:          git> 0000
+20:11:34.544873 run-command.c:654       trace: run_command: git send-pack --stateless-rpc --helper-status --thin --no-progress https://github.com/chrismanfredi/ParadiseParkFD.git/ --stdin
+20:11:34.551131 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/libexec/git-core/git
+20:11:34.551933 exec-cmd.c:238          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/libexec/git-core
+20:11:34.552682 git.c:460               trace: built-in: git send-pack --stateless-rpc --helper-status --thin --no-progress https://github.com/chrismanfredi/ParadiseParkFD.git/ --stdin
+20:11:34.552879 pkt-line.c:80           packet:          git< refs/heads/main:refs/heads/main
+20:11:34.552899 pkt-line.c:80           packet:          git< 0000
+20:11:34.552909 pkt-line.c:80           packet:          git< 7efc49d29a97898655ef338e373ac1ad0eda4fa6 refs/heads/main\0report-status report-status-v2 delete-refs side-band-64k ofs-delta atomic object-format=sha1 quiet agent=github/spokes-receive-pack-acac8763c60f636c44baaf5c3887895cf5f55c30 session-id=C041:FD6CD:FFAF9BD:1429B985:69113BC6 push-options
+20:11:34.552928 pkt-line.c:80           packet:          git< 0000
+20:11:34.553536 pkt-line.c:80           packet:          git> 7efc49d29a97898655ef338e373ac1ad0eda4fa6 4dcd96ab812ca88090e51fc02d2c3367e6c13536 refs/heads/main\0 report-status-v2 side-band-64k quiet object-format=sha1 agent=git/2.37.1.(Apple.Git-137.1)
+20:11:34.553550 pkt-line.c:80           packet:          git> 0000
+20:11:34.553594 pkt-line.c:80           packet:          git< 00c17efc49d29a97898655ef338e373ac1ad0eda4fa6 4dcd96ab812ca88090e51fc02d2c3367e6c13536 refs/heads/main\0 report-status-v2 side-band-64k quiet object-format=sha1 agent=git/2.37.1.(Apple.Git-137.1)0000
+20:11:34.553601 run-command.c:654       trace: run_command: git pack-objects --all-progress-implied --revs --stdout --thin --delta-base-offset -q
+20:11:34.558380 exec-cmd.c:139          trace: resolved executable path from Darwin stack: /Library/Developer/CommandLineTools/usr/libexec/git-core/git
+20:11:34.558813 exec-cmd.c:238          trace: resolved executable dir: /Library/Developer/CommandLineTools/usr/libexec/git-core
+20:11:34.559226 git.c:460               trace: built-in: git pack-objects --all-progress-implied --revs --stdout --thin --delta-base-offset -q
+20:11:34.612994 pkt-line.c:80           packet:          git< PACK ...
+20:11:34.627933 http.c:678              == Info: Found bundle for host: 0x7f9baea15380 [serially]
+20:11:34.627978 http.c:678              == Info: Re-using existing connection with host github.com
+20:11:34.627996 http.c:678              == Info: Server auth using Basic with user 'chrismanfredi'
+20:11:34.628138 http.c:625              => Send header, 0000000343 bytes (0x00000157)
+20:11:34.628160 http.c:637              => Send header: POST /chrismanfredi/ParadiseParkFD.git/git-receive-pack HTTP/1.1
+20:11:34.628165 http.c:637              => Send header: Host: github.com
+20:11:34.628170 http.c:637              => Send header: Authorization: Basic <redacted>
+20:11:34.628174 http.c:637              => Send header: User-Agent: git/2.37.1 (Apple Git-137.1)
+20:11:34.628179 http.c:637              => Send header: Content-Type: application/x-git-receive-pack-request
+20:11:34.628183 http.c:637              => Send header: Accept: application/x-git-receive-pack-result
+20:11:34.628187 http.c:637              => Send header: Content-Length: 4
+20:11:34.628191 http.c:637              => Send header:
+20:11:34.628198 http.c:678              == Info: upload completely sent off: 4 bytes
+20:11:34.710076 http.c:625              <= Recv header, 0000000017 bytes (0x00000011)
+20:11:34.710113 http.c:637              <= Recv header: HTTP/1.1 200 OK
+20:11:34.710125 http.c:625              <= Recv header, 0000000026 bytes (0x0000001a)
+20:11:34.710152 http.c:637              <= Recv header: Server: GitHub-Babel/3.0
+20:11:34.710162 http.c:625              <= Recv header, 0000000053 bytes (0x00000035)
+20:11:34.710171 http.c:637              <= Recv header: Content-Type: application/x-git-receive-pack-result
+20:11:34.710180 http.c:625              <= Recv header, 0000000054 bytes (0x00000036)
+20:11:34.710186 http.c:637              <= Recv header: Content-Security-Policy: default-src 'none'; sandbox
+20:11:34.710193 http.c:625              <= Recv header, 0000000040 bytes (0x00000028)
+20:11:34.710200 http.c:637              <= Recv header: expires: Fri, 01 Jan 1980 00:00:00 GMT
+20:11:34.710207 http.c:625              <= Recv header, 0000000018 bytes (0x00000012)
+20:11:34.710213 http.c:637              <= Recv header: pragma: no-cache
+20:11:34.710220 http.c:625              <= Recv header, 0000000053 bytes (0x00000035)
+20:11:34.710226 http.c:637              <= Recv header: Cache-Control: no-cache, max-age=0, must-revalidate
+20:11:34.710233 http.c:625              <= Recv header, 0000000023 bytes (0x00000017)
+20:11:34.710239 http.c:637              <= Recv header: Vary: Accept-Encoding
+20:11:34.710246 http.c:625              <= Recv header, 0000000019 bytes (0x00000013)
+20:11:34.710252 http.c:637              <= Recv header: Content-Length: 0
+20:11:34.710259 http.c:625              <= Recv header, 0000000037 bytes (0x00000025)
+20:11:34.710265 http.c:637              <= Recv header: Date: Mon, 10 Nov 2025 01:11:34 GMT
+20:11:34.710272 http.c:625              <= Recv header, 0000000059 bytes (0x0000003b)
+20:11:34.710277 http.c:637              <= Recv header: X-GitHub-Request-Id: C041:FD6CD:FFAFAC8:1429BAFF:69113BC6
+20:11:34.710284 http.c:625              <= Recv header, 0000000023 bytes (0x00000017)
+20:11:34.710290 http.c:637              <= Recv header: X-Frame-Options: DENY
+20:11:34.710297 http.c:625              <= Recv header, 0000000073 bytes (0x00000049)
+20:11:34.710303 http.c:637              <= Recv header: Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+20:11:34.710310 http.c:625              <= Recv header, 0000000002 bytes (0x00000002)
+20:11:34.710316 http.c:637              <= Recv header:
+20:11:34.710333 http.c:678              == Info: Connection #0 to host github.com left intact
+20:11:34.710388 http.c:678              == Info: Found bundle for host: 0x7f9baea15380 [serially]
+20:11:34.710406 http.c:678              == Info: Re-using existing connection with host github.com
+20:11:34.710422 http.c:678              == Info: Server auth using Basic with user 'chrismanfredi'
+20:11:34.710483 http.c:625              => Send header, 0000000384 bytes (0x00000180)
+20:11:34.710498 http.c:637              => Send header: POST /chrismanfredi/ParadiseParkFD.git/git-receive-pack HTTP/1.1
+20:11:34.710504 http.c:637              => Send header: Host: github.com
+20:11:34.710509 http.c:637              => Send header: Authorization: Basic <redacted>
+20:11:34.710515 http.c:637              => Send header: User-Agent: git/2.37.1 (Apple Git-137.1)
+20:11:34.710521 http.c:637              => Send header: Accept-Encoding: deflate, gzip
+20:11:34.710526 http.c:637              => Send header: Content-Type: application/x-git-receive-pack-request
+20:11:34.710532 http.c:637              => Send header: Accept: application/x-git-receive-pack-result
+20:11:34.710538 http.c:637              => Send header: Transfer-Encoding: chunked
+20:11:34.710543 http.c:637              => Send header:
+20:11:34.710552 http.c:678              == Info: upload completely sent off: 14 bytes
+20:11:34.799957 http.c:625              <= Recv header, 0000000017 bytes (0x00000011)
+20:11:34.799996 http.c:637              <= Recv header: HTTP/1.1 200 OK
+20:11:34.800017 http.c:625              <= Recv header, 0000000026 bytes (0x0000001a)
+20:11:34.800030 http.c:637              <= Recv header: Server: GitHub-Babel/3.0
+20:11:34.800046 http.c:625              <= Recv header, 0000000053 bytes (0x00000035)
+20:11:34.800058 http.c:637              <= Recv header: Content-Type: application/x-git-receive-pack-result
+20:11:34.800757 http.c:625              <= Recv header, 0000000054 bytes (0x00000036)
+20:11:34.800784 http.c:637              <= Recv header: Content-Security-Policy: default-src 'none'; sandbox
+20:11:34.800801 http.c:625              <= Recv header, 0000000040 bytes (0x00000028)
+20:11:34.800813 http.c:637              <= Recv header: expires: Fri, 01 Jan 1980 00:00:00 GMT
+20:11:34.800826 http.c:625              <= Recv header, 0000000018 bytes (0x00000012)
+20:11:34.800837 http.c:637              <= Recv header: pragma: no-cache
+20:11:34.800848 http.c:625              <= Recv header, 0000000053 bytes (0x00000035)
+20:11:34.800859 http.c:637              <= Recv header: Cache-Control: no-cache, max-age=0, must-revalidate
+20:11:34.800869 http.c:625              <= Recv header, 0000000023 bytes (0x00000017)
+20:11:34.800879 http.c:637              <= Recv header: Vary: Accept-Encoding
+20:11:34.800891 http.c:625              <= Recv header, 0000000028 bytes (0x0000001c)
+20:11:34.800901 http.c:637              <= Recv header: Transfer-Encoding: chunked
+20:11:34.800912 http.c:625              <= Recv header, 0000000037 bytes (0x00000025)
+20:11:34.800922 http.c:637              <= Recv header: Date: Mon, 10 Nov 2025 01:11:34 GMT
+20:11:34.800931 http.c:625              <= Recv header, 0000000059 bytes (0x0000003b)
+20:11:34.800940 http.c:637              <= Recv header: X-GitHub-Request-Id: C041:FD6CD:FFAFB1B:1429BB65:69113BC6
+20:11:34.800949 http.c:625              <= Recv header, 0000000023 bytes (0x00000017)
+20:11:34.800958 http.c:637              <= Recv header: X-Frame-Options: DENY
+20:11:34.800969 http.c:625              <= Recv header, 0000000073 bytes (0x00000049)
+20:11:34.800979 http.c:637              <= Recv header: Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+20:11:34.800989 http.c:625              <= Recv header, 0000000002 bytes (0x00000002)
+20:11:34.800998 http.c:637              <= Recv header:
+20:11:34.801060 http.c:678              == Info: Connection #0 to host github.com left intact
+send-pack: unexpected disconnect while reading sideband packet
+20:11:34.837098 pkt-line.c:80           packet:          git> 0000
+fatal: the remote end hung up unexpectedly
+Everything up-to-date
