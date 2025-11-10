@@ -37,15 +37,6 @@ export default function Home() {
               />
             </div>
           </div>
-          <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-100">
-            <iframe
-              title="Paradise Park RV Park Map"
-              src="https://www.google.com/maps?q=Paradise+Park+Punta+Gorda&output=embed"
-              className="h-[220px] w-full"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
         </div>
         <div className="space-y-4">
           <h2 className="text-3xl font-semibold text-zinc-900">About Paradise Park FD</h2>
@@ -95,7 +86,7 @@ export default function Home() {
       </section>
 
       <div className={fullBleedStatic} style={{ marginLeft: "calc(50% - 50vw)" }}>
-        <ParallaxBanner image="/1.jpeg" height={360} />
+        <ParallaxBanner image="/1.jpeg" height={520} />
       </div>
 
       <section className="space-y-6 rounded-3xl border border-zinc-200 bg-white px-6 py-10 shadow-sm">
